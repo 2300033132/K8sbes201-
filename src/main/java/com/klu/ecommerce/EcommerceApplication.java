@@ -10,7 +10,7 @@ public class EcommerceApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(EcommerceApplication.class, args);
-    }
+        System.out.println("k8sbe");    }
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
