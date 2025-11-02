@@ -1,19 +1,15 @@
-package com.klu.ecommerce;
+spring.application.name=ecommerce
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+# ✅ Tomcat WAR context path mapping
+server.servlet.context-path=/back1
 
-@SpringBootApplication
-public class EcommerceApplication extends SpringBootServletInitializer {
+# ✅ MySQL inside Kubernetes (service name)
+spring.datasource.url=jdbc:mysql://mysql:3306/ecommerce
+spring.datasource.username=root
+spring.datasource.password=root
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
-    public static void main(String[] args) {
-        SpringApplication.run(EcommerceApplication.class, args);
-        System.out.println("k8sbe");    }
-
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(EcommerceApplication.class);
-    }
-}
+# ✅ JPA Settings
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
